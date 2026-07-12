@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🚀 Ak Developer 💻</title>
+
+<style>
+body {
+    margin:0;
+    background:linear-gradient(135deg,#000,#050505);
+    color:white;
+    font-family:'Poppins',sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* 💼 Card */
+.card {
+    width:360px;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 40px rgba(0,255,200,0.1);
+    text-align:center;
+}
+
+/* 💬 Text */
+#status {
+    margin-bottom:20px;
+    color:#00ffcc;
+    min-height:30px;
+}
+
+/* 📊 Bars */
+.progress {
+    margin:15px 0;
+    text-align:left;
+    opacity:0;
+    transition:1s;
+}
+
+.bar {
+    height:8px;
+    background:#222;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.fill {
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,gold,#00ffcc);
+    transition:2s;
+}
+
+/* 🎉 Final */
+.final {
+    margin-top:20px;
+    font-size:22px;
+    color:gold;
+    opacity:0;
+    transition:1.5s;
+}
+
+/* 💎 CREDIT + INSTA */
+.credit {
+    position:absolute;
+    bottom:20px;
+    width:100%;
+    text-align:center;
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:1.5px;
+    color:#00ffcc;
+    text-shadow:0 0 5px #00ffcc, 0 0 10px rgba(0,255,200,0.6);
+}
+
+/* typing cursor */
+.cursor {
+    display:inline-block;
+    margin-left:5px;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink {
+    0%{opacity:1;}
+    50%{opacity:0;}
+    100%{opacity:1;}
+}
+
+/* insta link */
+.insta {
+    display:block;
+    margin-top:5px;
+    font-size:14px;
+}
+
+.insta a {
+    color:#00ffcc;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.insta a:hover {
+    color:gold;
+    text-shadow:0 0 10px gold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div id="status">Initializing System...</div>
+
+    <div class="progress" id="p1">Dedication 💪
+        <div class="bar"><div class="fill" id="f1"></div></div>
+    </div>
+
+    <div class="progress" id="p2">Hard Work 📚
+        <div class="bar"><div class="fill" id="f2"></div></div>
+    </div>
+
+    <div class="progress" id="p3">Consistency 📈
+        <div class="bar"><div class="fill" id="f3"></div></div>
+    </div>
+
+    <div class="progress" id="p4">Success 🎯
+        <div class="bar"><div class="fill" id="f4"></div></div>
+    </div>
+
+    <div class="final" id="final"></div>
+</div>
+
+<!-- 💎 CREDIT SECTION -->
+<div class="credit">
+    <span id="typing"></span><span class="cursor">|</span>
+    <div class="insta">
+        <a href="https://instagram.com/Akshay_Prajapati_5_6_7" target="_blank">
+            📸 Akshay_Prajapati_5_6_7
+        </a>
+    </div>
+</div>
+
+<script>
+const status = document.getElementById("status");
+
+// STEP 1
+setTimeout(()=>{
+    status.innerHTML="Analyzing CA/CMA Journey...";
+},1500);
+
+// STEP 2 SHOW BARS
+setTimeout(()=>{
+    status.innerHTML="Loading Skills...";
+    document.getElementById("p1").style.opacity=1;
+},3000);
+
+setTimeout(()=>{ document.getElementById("p2").style.opacity=1; },4000);
+setTimeout(()=>{ document.getElementById("p3").style.opacity=1; },5000);
+setTimeout(()=>{ document.getElementById("p4").style.opacity=1; },6000);
+
+// STEP 3 FILL BARS
+setTimeout(()=>{
+    status.innerHTML="Progress Updating...";
+    document.getElementById("f1").style.width="95%";
+},7000);
+
+setTimeout(()=>{ document.getElementById("f2").style.width="90%"; },8000);
+setTimeout(()=>{ document.getElementById("f3").style.width="92%"; },9000);
+setTimeout(()=>{ document.getElementById("f4").style.width="100%"; },10000);
+
+// STEP 4 FINAL
+setTimeout(()=>{
+    status.innerHTML="🎉 Achievement Unlocked!";
+    document.getElementById("final").style.opacity=1;
+    document.getElementById("final").innerHTML=
+    "👑 CA RONI 💎<br><br>🎂 Happy Birthday 🎂<br>Future CA & CMA 📊";
+},12000);
+
+// ✨ TYPING EFFECT
+const text = "Made by AK 💼";
+let i = 0;
+
+function typeEffect() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 80);
+    }
+}
+
+typeEffect();
+</script>
+
+</body>
+</html>
